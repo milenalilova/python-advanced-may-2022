@@ -16,6 +16,7 @@ conquered_peaks = []
 days = 7
 
 while portions and stamina and days > 0 and peaks:
+    days -= 1
     last_portion = portions.pop()
     first_stamina = stamina.popleft()
     sum_values = last_portion + first_stamina
@@ -24,9 +25,7 @@ while portions and stamina and days > 0 and peaks:
     if sum_values >= peaks_dict[current_peak]:
         conquered_peaks.append(current_peak)
         peaks.popleft()
-    else:
-        days -= 1
-
+  
 if not peaks:
     print("Alex did it! He climbed all top five Pirin peaks in one week -> @FIVEinAWEEK")
 else:
