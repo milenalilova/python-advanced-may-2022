@@ -37,6 +37,47 @@ def softuni_students(*args, **kwargs):
     return result
 
 
+
+# Authors solution
+# def softuni_students(*args, **kwargs):
+#     course_dict = {}
+#
+#     for data in args:
+#         course_id, username = data
+#         if username not in course_dict:
+#             course_dict[username] = {}
+#         if course_id not in course_dict[username]:
+#             course_dict[username][course_id] = None
+#
+#     for course_id, course_name in kwargs.items():
+#         for name, course_info in course_dict.items():
+#             for id, c_name in course_info.items():
+#                 if course_id == id:
+#                     course_dict[name][id] = course_name
+#
+#     invalid_students = []
+#     for k, v in course_dict.items():
+#         for k1, v1 in v.items():
+#             if v1 is None:
+#                 invalid_students.append(k)
+#     for student in invalid_students:
+#         if student in course_dict.keys():
+#             del course_dict[student]
+#
+#     result = ''
+#
+#     course_dict = dict(sorted(course_dict.items()))
+#     for k, v in course_dict.items():
+#         for k1, v1 in v.items():
+#             result += f"*** A student with the username {k} has successfully finished the course {v1}!\n"
+#
+#     if invalid_students:
+#         invalid_students = sorted(invalid_students)
+#         result += f"!!! Invalid course students: {', '.join(invalid_students)}"
+#
+#     return result
+
+
 print(softuni_students(
     ('id_1', 'Kaloyan9905'),
     id_1='Python Web Framework',
